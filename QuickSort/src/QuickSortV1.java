@@ -11,6 +11,7 @@ import java.util.Arrays;
  * 画了图：https://weizujie.oss-cn-shenzhen.aliyuncs.com/img/未命名文件.png
  */
 public class QuickSortV1 {
+
     public static void main(String[] args) {
         int[] arr = {4, 1, 6, 5, 3, 2, 8, 7};
         quickSort(arr, 0, arr.length - 1);
