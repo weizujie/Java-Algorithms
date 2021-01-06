@@ -1,22 +1,36 @@
 import java.util.Arrays;
 
 /**
+ * 双边循环法
+ * <p>
  * 快速排序的思想：
  * 1. 先从数组里取一个基准数 pivot
  * 2. 把数组里比基准数大的数放到它的右边，比它小或等于数的放到左边
  * 3. 重复第二步
+ *
+ * 画了图：https://weizujie.oss-cn-shenzhen.aliyuncs.com/img/未命名文件.png
  */
-public class QuickSort {
+public class QuickSortV1 {
     public static void main(String[] args) {
         int[] arr = {4, 1, 6, 5, 3, 2, 8, 7};
         quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
 
+    /**
+     * 分治
+     * 分别让 左序列 和 右序列 再次进行元素交换
+     *
+     * @param arr   数组
+     * @param start 开始位置
+     * @param end   结束位置
+     */
     public static void quickSort(int[] arr, int start, int end) {
         if (start < end) {
             int pivot = partition(arr, start, end);
+            // 对做序列进行元素交换，边界为序列的第一位到交换后的基准元素位置的前一位
             quickSort(arr, start, pivot - 1);
+            // 对右序列进行元素交换，边界为交换后的基准元素位置的后一位到序列最后一位
             quickSort(arr, pivot + 1, end);
         }
     }
@@ -24,10 +38,10 @@ public class QuickSort {
     /**
      * 实现元素的交换，让数列中的元素根据自身大小，分别交换到基准元素的左右两边
      *
-     * @param arr
-     * @param start
-     * @param end
-     * @return
+     * @param arr   数组
+     * @param start 开始位置
+     * @param end   结束位置
+     * @return 基准元素的新位置（交换后的）
      */
     private static int partition(int[] arr, int start, int end) {
         int left = start;
