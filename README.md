@@ -10,3 +10,6 @@
 - 快速排序
     - QuickSortV1：双边循环法
     - QuickSortV2：单边循环法
+  
+- 二分查找
+  - BinarySearch: 二分查找
