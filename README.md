@@ -12,4 +12,7 @@
     - QuickSortV2：单边循环法
   
 - 二分查找
-  - BinarySearch: 二分查找
+  - BinarySearch：二分查找
+  
+- 选择排序
+  - SelectionSort：选择排序
