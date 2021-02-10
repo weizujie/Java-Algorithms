@@ -6,7 +6,12 @@ public class SelectionSort {
         System.out.println(Arrays.toString(selectionSort(arr)));
     }
 
-
+    /**
+     * 选择排序
+     *
+     * @param arr 数组
+     * @return 排好序的数组
+     */
     public static int[] selectionSort(int[] arr) {
         int smallNum;
         int[] newArr = new int[arr.length];
@@ -18,6 +23,12 @@ public class SelectionSort {
     }
 
 
+    /**
+     * 查找数组中最小的元素
+     *
+     * @param arr 数组
+     * @return 最小元素的索引
+     */
     public static int findSmallest(int[] arr) {
         int smallNum = arr[0];
         int smallIndex = 0;
