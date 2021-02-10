@@ -4,14 +4,14 @@
  * 如果中间值大于目标值(mid > target),则继续在左侧搜索(right = mid - 1);
  * 如果中间值小于目标值(mid < target),则继续在右侧搜索(left = mid + 1)
  */
-public class BinarySearch {
+public class BinarySearch1 {
 
     /**
      * while 循环写法
      *
      * @param arr    已排序的数组
      * @param target 目标值
-     * @return 索引
+     * @return 找到的目标值的索引
      */
     public static int search(int[] arr, int target) {
         int left = 0;
