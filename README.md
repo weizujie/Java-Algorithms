@@ -12,7 +12,9 @@
     - [QuickSortV2](https://github.com/weizujie/Java-Algorithms/blob/main/QuickSort/src/QuickSortV2.java)：单边循环法
 
 - 二分查找
-    - [BinarySearch](https://github.com/weizujie/Java-Algorithms/blob/main/BinarySearch/src/BinarySearch.java)：二分查找
+    - [BinarySearch1](https://github.com/weizujie/Java-Algorithms/blob/main/BinarySearch1/src/BinarySearch1.java)：while 循环写法
+    - [BinarySearch2](https://github.com/weizujie/Java-Algorithms/blob/main/BinarySearch2/src/BinarySearch2.java)：递归写法
+  
 
 - 选择排序
     - [SelectionSort](https://github.com/weizujie/Java-Algorithms/blob/main/SelectionSort/src/SelectionSort.java)：选择排序
