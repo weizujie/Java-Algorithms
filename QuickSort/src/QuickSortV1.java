@@ -7,7 +7,7 @@ import java.util.Arrays;
  * 1. 先从数组里取一个基准数 pivot
  * 2. 把数组里比基准数大的数放到它的右边，比它小或等于数的放到左边
  * 3. 重复第二步
- *
+ * <p>
  * 画了图：https://weizujie.oss-cn-shenzhen.aliyuncs.com/img/未命名文件.png
  */
 public class QuickSortV1 {
@@ -19,21 +19,20 @@ public class QuickSortV1 {
     }
 
     /**
-     * 分治
-     * 分别让 左序列 和 右序列 再次进行元素交换
+     * 分而治之.
+     * 以 pivot 为界限,分别对左子数组和右子数组做同样的操作
      *
-     * @param arr   数组
+     * @param arr   未排序的数组
      * @param start 开始位置
      * @param end   结束位置
      */
     public static void quickSort(int[] arr, int start, int end) {
-        if (start < end) {
-            int pivot = partition(arr, start, end);
-            // 对做序列进行元素交换，边界为序列的第一位到交换后的基准元素位置的前一位
-            quickSort(arr, start, pivot - 1);
-            // 对右序列进行元素交换，边界为交换后的基准元素位置的后一位到序列最后一位
-            quickSort(arr, pivot + 1, end);
+        if (start >= end) {
+            return;
         }
+        int pivot = partition(arr, start, end);
+        quickSort(arr, start, pivot - 1);
+        quickSort(arr, pivot + 1, end);
     }
 
     /**
@@ -44,7 +43,7 @@ public class QuickSortV1 {
      * @param end   结束位置
      * @return 基准元素的新位置（交换后的）
      */
-    private static int partition(int[] arr, int start, int end) {
+    public static int partition(int[] arr, int start, int end) {
         int left = start;
         int right = end;
         int pivot = arr[start];
@@ -60,6 +59,7 @@ public class QuickSortV1 {
             while (left < right && arr[left] <= pivot) {
                 left++;
             }
+
             // 此时 right 指向的是比 pivot 小的数，left 指向的是比 pivot 大的数。交换它俩
             if (left < right) {
                 temp = arr[left];
@@ -67,6 +67,7 @@ public class QuickSortV1 {
                 arr[right] = temp;
             }
         }
+
         // 当指针走到一起的时候，交换和 pivot 的位置（left 或者 right 都行，因为他们指向同一个数）
         arr[start] = arr[left];
         // 返回交换后的 pivot 的位置
